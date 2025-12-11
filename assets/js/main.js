@@ -111,7 +111,7 @@ $(document).ready(function () {
       e.preventDefault();
       var offset = 100;
       $('html, body').animate({
-        scrollTop: target.offset().top - offset
+        scrollTop: target.offset().top - offset 
       }, 600);
       
       // Close mobile menu if open
