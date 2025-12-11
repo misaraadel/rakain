@@ -18,10 +18,6 @@
   src: url("../fonts/Poppins/Poppins-Bold.ttf");
   font-weight: 900;
 }
-html, body {
-  cursor: url("../images/icons/cursor.svg") 0 0, none !important;
-}
-
 * {
   margin: 0px;
   box-sizing: border-box;
