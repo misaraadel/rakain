@@ -105,7 +105,7 @@ $(document).ready(function () {
   });
 
   // Smooth scroll with 100px offset for anchor links
-  $('a[href*="#"]').not('[href="#"]').on('click', function(e) {
+  $('.nav-link[href*="#"]').not('[href="#"]').on('click', function(e) {
     var target = $(this.hash);
     if (target.length) {
       e.preventDefault();

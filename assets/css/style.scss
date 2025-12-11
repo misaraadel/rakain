@@ -92,7 +92,7 @@
     position: absolute;
     bottom: 40px;
     right: 50px;
-    font-size:  60px;
+    font-size:  80px;
     font-weight: 600;
     color: var(--dark-color);
     letter-spacing: 2px;
@@ -100,7 +100,7 @@
     @media (max-width: 992px) {
       bottom: 30px;
       right: 30px;
-      font-size: 16px;
+      font-size: 80px;
     }
   }
 }
@@ -731,7 +731,7 @@ header {
       padding: 0px;
       margin: 0px;
 
-      .nav-link {
+      .tab-link {
         background-color: transparent;
         border: 0px;
         border-radius: 0px;

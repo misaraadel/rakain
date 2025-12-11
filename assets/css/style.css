@@ -630,7 +630,7 @@ button,
   position: absolute;
   bottom: 40px;
   right: 50px;
-  font-size: 60px;
+  font-size: 80px;
   font-weight: 600;
   color: var(--dark-color);
   letter-spacing: 2px;
@@ -639,7 +639,7 @@ button,
   .loading-page .loading-counter {
     bottom: 30px;
     right: 30px;
-    font-size: 16px;
+    font-size: 80px;
   }
 }
 
@@ -1168,7 +1168,7 @@ header .swiper-pagination .swiper-pagination-line {
   padding: 0px;
   margin: 0px;
 }
-.story .nav .nav-item .nav-link {
+.story .nav .nav-item .tab-link {
   background-color: transparent;
   border: 0px;
   border-radius: 0px;
@@ -1181,7 +1181,7 @@ header .swiper-pagination .swiper-pagination-line {
   z-index: 9;
   transition: all 0.3s linear;
 }
-.story .nav .nav-item .nav-link::after {
+.story .nav .nav-item .tab-link::after {
   content: "";
   position: absolute;
   width: 8px;
@@ -1193,12 +1193,12 @@ header .swiper-pagination .swiper-pagination-line {
   transform: scale(0);
   transition: all 0.3s linear;
 }
-.story .nav .nav-item .nav-link.active {
+.story .nav .nav-item .tab-link.active {
   padding-inline-start: 20px;
   color: var(--dark-color);
   font-weight: 700;
 }
-.story .nav .nav-item .nav-link.active::after {
+.story .nav .nav-item .tab-link.active::after {
   transform: scale(1);
 }
 .story .data-contain {
