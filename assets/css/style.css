@@ -957,7 +957,7 @@ label,
 }
 .navbar .contain .navbar-nav {
   flex-direction: row;
-  gap: 20px;
+  gap: 25px;
   align-items: center;
   align-content: center;
 }
@@ -1030,6 +1030,9 @@ label,
   .navbar .contain .navbar-nav .nav-item .nav-link::after {
     background-color: var(--dark-color);
   }
+}
+.navbar .contain .navbar-nav .nav-item .nav-link:hover, .navbar .contain .navbar-nav .nav-item .nav-link.active {
+  font-weight: 700;
 }
 .navbar .contain .navbar-nav .nav-item .nav-link:hover::after, .navbar .contain .navbar-nav .nav-item .nav-link.active::after {
   transform: scaleX(1);

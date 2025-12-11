@@ -502,7 +502,7 @@ label,
 
     .navbar-nav {
       flex-direction: row;
-      gap: 20px;
+      gap: 25px;
       align-items: center;
       align-content: center;
 
@@ -578,6 +578,7 @@ label,
 
           &:hover,
           &.active {
+            font-weight: 700;
             &::after {
               transform: scaleX(1);
             }
