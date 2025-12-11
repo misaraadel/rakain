@@ -114,18 +114,3 @@ button {
       }
     }
 }
-
-// Hide default cursor everywhere
-.swiper,
-.swiper-wrapper,
-.swiper-slide,
-.swiper-button-next,
-.swiper-button-prev,
-.swiper-pagination,
-.navbar,
-.navbar *,
-a,
-button,
-[class*="swiper"] {
-    cursor: none !important;
-}
