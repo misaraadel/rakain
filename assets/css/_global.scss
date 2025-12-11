@@ -6,6 +6,12 @@
 
 @font-face {
     font-family: "Poppins";
+    src: url('../fonts/Poppins/Poppins-Light.ttf');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Poppins";
     src: url('../fonts/Poppins/Poppins-Regular.ttf');
     font-weight: 500;
 }
@@ -21,14 +27,14 @@ html, body {
 
 }
 
-a, button {
-   cursor: none !important;
+// a, button {
+//    cursor: none !important;
 
-    &:hover{
-        cursor: none !important;
+//     &:hover{
+//         cursor: none !important;
 
-    }
-  }
+//     }
+//   }
   
 
 * {
@@ -36,7 +42,7 @@ a, button {
     box-sizing: border-box;
     font-family: "Poppins" , sans-serif ;
     scroll-behavior: smooth;
-    cursor: none !important;
+    // cursor: none !important;
 
     &::selection{
         background-color: var(--primary-color);

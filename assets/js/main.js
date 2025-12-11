@@ -29,53 +29,53 @@ $(document).ready(function () {
     }
   }, 25); // ~2.5 seconds total
 
-  // Custom Cursor with Direction
-  const cursor = document.querySelector('.custom-cursor');
-  let mouseX = 0, mouseY = 0;
-  let cursorX = 0, cursorY = 0;
-  let prevMouseX = 0, prevMouseY = 0;
-  let angle = 0;
+  // // Custom Cursor with Direction
+  // const cursor = document.querySelector('.custom-cursor');
+  // let mouseX = 0, mouseY = 0;
+  // let cursorX = 0, cursorY = 0;
+  // let prevMouseX = 0, prevMouseY = 0;
+  // let angle = 0;
 
-  document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
+  // document.addEventListener('mousemove', (e) => {
+  //   mouseX = e.clientX;
+  //   mouseY = e.clientY;
 
-    // Calculate direction angle
-    const deltaX = mouseX - prevMouseX;
-    const deltaY = mouseY - prevMouseY;
+  //   // Calculate direction angle
+  //   const deltaX = mouseX - prevMouseX;
+  //   const deltaY = mouseY - prevMouseY;
     
-    if (Math.abs(deltaX) > 2 || Math.abs(deltaY) > 2) {
-      angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
-    }
+  //   if (Math.abs(deltaX) > 2 || Math.abs(deltaY) > 2) {
+  //     angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
+  //   }
 
-    prevMouseX = mouseX;
-    prevMouseY = mouseY;
-  });
+  //   prevMouseX = mouseX;
+  //   prevMouseY = mouseY;
+  // });
 
-  function animateCursor() {
-    // Smooth follow
-    cursorX += (mouseX - cursorX) * 0.15;
-    cursorY += (mouseY - cursorY) * 0.15;
+  // function animateCursor() {
+  //   // Smooth follow
+  //   cursorX += (mouseX - cursorX) * 0.15;
+  //   cursorY += (mouseY - cursorY) * 0.15;
 
-    if (cursor) {
-      cursor.style.left = cursorX + 'px';
-      cursor.style.top = cursorY + 'px';
-      cursor.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`;
-    }
+  //   if (cursor) {
+  //     cursor.style.left = cursorX + 'px';
+  //     cursor.style.top = cursorY + 'px';
+  //     cursor.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`;
+  //   }
 
-    requestAnimationFrame(animateCursor);
-  }
-  animateCursor();
+  //   requestAnimationFrame(animateCursor);
+  // }
+  // animateCursor();
 
-  // Scale cursor on hover
-  $('a, button, .hamburger, .swiper-button-next, .swiper-button-prev, .nav-link').hover(
-    function() {
-      $('.custom-cursor').addClass('cursor-hover');
-    },
-    function() {
-      $('.custom-cursor').removeClass('cursor-hover');
-    }
-  );
+  // // Scale cursor on hover
+  // $('a, button, .hamburger, .swiper-button-next, .swiper-button-prev, .nav-link').hover(
+  //   function() {
+  //     $('.custom-cursor').addClass('cursor-hover');
+  //   },
+  //   function() {
+  //     $('.custom-cursor').removeClass('cursor-hover');
+  //   }
+  // );
 
   $(window).scroll(function () {
     if ($(this).scrollTop() > 700) {

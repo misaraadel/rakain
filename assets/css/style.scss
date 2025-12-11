@@ -308,7 +308,7 @@ label,
 .heading {
   width: 100%;
   padding: 20px 100px;
-  padding-inline-start: 25%;
+  padding-inline-start: 15%;
   background-color: #f6f6f6;
 
   @include media() {
@@ -739,7 +739,7 @@ header {
         padding: 0px;
         margin: 0px;
         font-size: 24px;
-        font-weight: 500;
+        font-weight: 400;
         color: #dadada;
         position: relative;
         z-index: 9;
@@ -1641,7 +1641,7 @@ footer {
     p {
       color: var(--dark-color);
       font-size: 16px;
-      font-weight: 500;
+      font-weight: 300;
       margin: 24px 0px 0px;
 
       @include media() {

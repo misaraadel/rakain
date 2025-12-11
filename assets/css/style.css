@@ -5,6 +5,11 @@
 }
 @font-face {
   font-family: "Poppins";
+  src: url("../fonts/Poppins/Poppins-Light.ttf");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Poppins";
   src: url("../fonts/Poppins/Poppins-Regular.ttf");
   font-weight: 500;
 }
@@ -17,19 +22,11 @@ html, body {
   cursor: url("../images/icons/cursor.svg") 0 0, none !important;
 }
 
-a, button {
-  cursor: none !important;
-}
-a:hover, button:hover {
-  cursor: none !important;
-}
-
 * {
   margin: 0px;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
-  cursor: none !important;
 }
 *::-moz-selection {
   background-color: var(--primary-color);
@@ -791,7 +788,7 @@ label,
 .heading {
   width: 100%;
   padding: 20px 100px;
-  padding-inline-start: 25%;
+  padding-inline-start: 15%;
   background-color: #f6f6f6;
 }
 @media (max-width: 992px) {
@@ -1178,7 +1175,7 @@ header .swiper-pagination .swiper-pagination-line {
   padding: 0px;
   margin: 0px;
   font-size: 24px;
-  font-weight: 500;
+  font-weight: 400;
   color: #dadada;
   position: relative;
   z-index: 9;
@@ -2024,7 +2021,7 @@ footer .contain .brand-name img {
 footer .contain p {
   color: var(--dark-color);
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 300;
   margin: 24px 0px 0px;
 }
 @media (max-width: 992px) {
