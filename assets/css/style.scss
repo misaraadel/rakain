@@ -342,7 +342,7 @@ label,
 
     @include media() {
       .navbar-nav {
-        top: 80px;
+        top: 80px !important;
       }
     }
   }
