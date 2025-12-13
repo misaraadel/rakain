@@ -593,8 +593,12 @@ header {
     border: 1px solid var(--light-color);
     border-radius: 50%;
 
+    &::before {
+      display: none;
+    }
+
     &::after {
-      content: "";
+      content: "" !important;
       position: absolute;
       width: 20px;
       height: 20px;
@@ -614,11 +618,23 @@ header {
     &::after {
       transform: scaleX(-1);
     }
+
+    @include rtl() {
+      &::after {
+        transform: scaleX(1);
+      }
+    }
   }
 
   .swiper-button-next {
     right: 5%;
     left: auto;
+
+    @include rtl() {
+      &::after {
+        transform: scaleX(-1);
+      }
+    }
   }
 
   .swiper-pagination {
@@ -696,6 +712,11 @@ header {
           left: 0px;
           transform: scale(0);
           transition: all 0.3s linear;
+
+          @include rtl() {
+            left: unset;
+            right: 0px;
+          }
         }
 
         &.active {
@@ -1056,7 +1077,6 @@ header {
         @include rtl() {
           left: auto;
           right: 25px;
-          writing-mode: vertical-lr;
           transform: rotate(0deg);
         }
 
@@ -1371,6 +1391,18 @@ header {
       transition: all 0.3s ease;
       @include flexCenter();
       z-index: 2;
+
+      &.next-image {
+        @include rtl() {
+          transform: scaleX(-1);
+        }
+      }
+
+      &.prev-image {
+        @include rtl() {
+          transform: scaleX(-1);
+        }
+      }
       
       @media (max-height: 600px) {
         width: 40px;

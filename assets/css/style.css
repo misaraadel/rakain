@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "Poppins";
   src: url("../fonts/Poppins/Poppins-Medium.ttf");
@@ -18,10 +19,37 @@
   src: url("../fonts/Poppins/Poppins-Bold.ttf");
   font-weight: 900;
 }
+html[dir=ltr] * {
+  font-family: "Poppins", sans-serif;
+}
+
+@font-face {
+  font-family: "ExpoArabic";
+  src: url("../fonts/ExpoArabic/ExpoArabic_Medium.ttf");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "ExpoArabic";
+  src: url("../fonts/ExpoArabic/ExpoArabicـLight.ttf");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "ExpoArabic";
+  src: url("../fonts/ExpoArabic/ExpoArabic-Book.ttf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "ExpoArabic";
+  src: url("../fonts/ExpoArabic/ExpoArabicـBold.ttf");
+  font-weight: 900;
+}
+html[dir=rtl] * {
+  font-family: "ExpoArabic", sans-serif;
+}
+
 * {
   margin: 0px;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
 }
 *::-moz-selection {
@@ -1011,9 +1039,13 @@ header .swiper-button-next {
   border: 1px solid var(--light-color);
   border-radius: 50%;
 }
+header .swiper-button-prev::before,
+header .swiper-button-next::before {
+  display: none;
+}
 header .swiper-button-prev::after,
 header .swiper-button-next::after {
-  content: "";
+  content: "" !important;
   position: absolute;
   width: 20px;
   height: 20px;
@@ -1030,9 +1062,15 @@ header .swiper-button-prev {
 header .swiper-button-prev::after {
   transform: scaleX(-1);
 }
+html[dir=rtl] header .swiper-button-prev::after {
+  transform: scaleX(1);
+}
 header .swiper-button-next {
   right: 5%;
   left: auto;
+}
+html[dir=rtl] header .swiper-button-next::after {
+  transform: scaleX(-1);
 }
 header .swiper-pagination {
   display: flex;
@@ -1105,6 +1143,10 @@ header .swiper-pagination .swiper-pagination-line {
   left: 0px;
   transform: scale(0);
   transition: all 0.3s linear;
+}
+html[dir=rtl] .story .nav .nav-item .tab-link::after {
+  left: unset;
+  right: 0px;
 }
 .story .nav .nav-item .tab-link.active {
   padding-inline-start: 20px;
@@ -1429,7 +1471,6 @@ html[dir=rtl] .story .service-card .card-content .card-icon {
 html[dir=rtl] .story .service-card .card-content h3 {
   left: auto;
   right: 25px;
-  writing-mode: vertical-lr;
   transform: rotate(0deg);
 }
 @media (max-width: 992px) {
@@ -1733,6 +1774,12 @@ html[dir=rtl] .story .service-card .card-content h3 {
   align-content: center;
   justify-content: center;
   z-index: 2;
+}
+html[dir=rtl] .project-popup .popup-side-image .nav-arrow.next-image {
+  transform: scaleX(-1);
+}
+html[dir=rtl] .project-popup .popup-side-image .nav-arrow.prev-image {
+  transform: scaleX(-1);
 }
 @media (max-height: 600px) {
   .project-popup .popup-side-image .nav-arrow {

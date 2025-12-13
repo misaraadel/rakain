@@ -1,25 +1,61 @@
-@font-face {
-    font-family: "Poppins";
-    src: url('../fonts/Poppins/Poppins-Medium.ttf');
-    font-weight: 700;
+html[dir="ltr"] {
+    @font-face {
+        font-family: "Poppins";
+        src: url('../fonts/Poppins/Poppins-Medium.ttf');
+        font-weight: 700;
+    }
+    
+    @font-face {
+        font-family: "Poppins";
+        src: url('../fonts/Poppins/Poppins-Thin.ttf');
+        font-weight: 300;
+    }
+    
+    @font-face {
+        font-family: "Poppins";
+        src: url('../fonts/Poppins/Poppins-Regular.ttf');
+        font-weight: 500;
+    }
+    
+    @font-face {
+        font-family: "Poppins";
+        src: url('../fonts/Poppins/Poppins-Bold.ttf');
+        font-weight: 900;
+    }
+
+    * {
+        font-family: "Poppins" , sans-serif ;
+    }
 }
 
-@font-face {
-    font-family: "Poppins";
-    src: url('../fonts/Poppins/Poppins-Thin.ttf');
-    font-weight: 300;
-}
+html[dir="rtl"] {
+    @font-face {
+        font-family: "ExpoArabic";
+        src: url('../fonts/ExpoArabic/ExpoArabic_Medium.ttf');
+        font-weight: 700;
+    }
+    
+    @font-face {
+        font-family: "ExpoArabic";
+        src: url('../fonts/ExpoArabic/ExpoArabicـLight.ttf');
+        font-weight: 300;
+    }
+    
+    @font-face {
+        font-family: "ExpoArabic";
+        src: url('../fonts/ExpoArabic/ExpoArabic-Book.ttf');
+        font-weight: 500;
+    }
+    
+    @font-face {
+        font-family: "ExpoArabic";
+        src: url('../fonts/ExpoArabic/ExpoArabicـBold.ttf');
+        font-weight: 900;
+    }
 
-@font-face {
-    font-family: "Poppins";
-    src: url('../fonts/Poppins/Poppins-Regular.ttf');
-    font-weight: 500;
-}
-
-@font-face {
-    font-family: "Poppins";
-    src: url('../fonts/Poppins/Poppins-Bold.ttf');
-    font-weight: 900;
+    * {
+        font-family: "ExpoArabic" , sans-serif ;
+    }
 }
 
 // html, body {
@@ -40,7 +76,7 @@
 * {
     margin: 0px;
     box-sizing: border-box;
-    font-family: "Poppins" , sans-serif ;
+   
     scroll-behavior: smooth;
     // cursor: none !important;
 
