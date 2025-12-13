@@ -606,23 +606,28 @@
             <div class="contain">
               <h2>Say hello</h2>
 
-              <form action="" class="form-contain">
+              <form  action="https://formspree.io/f/manrvpnw"
+  method="POST" class="form-contain">
                 <div class="form-group">
-                  <input type="text" placeholder="Name" class="form-control" />
+                  <input type="text" name="name" placeholder="Name" class="form-control" required />
                 </div>
 
                 <div class="form-group">
                   <input
                     type="email"
+                    name="email"
                     placeholder="Email"
                     class="form-control"
+                    required
                   />
                 </div>
 
                 <div class="form-group text-area">
                   <textarea
+                    name="message"
                     placeholder="Comment"
                     class="form-control"
+                    required
                   ></textarea>
                 </div>
 
