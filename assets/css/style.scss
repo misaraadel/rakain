@@ -19,89 +19,10 @@
     transform: translateY(-100%);
   }
 
-  .loading-lines {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-
-  // Horizontal lines
-  .line-h {
-    position: absolute;
-    height: 1px;
-    background-color: #e0e0e0;
-    left: -100%;
-    animation: lineHorizontal 2s ease-in-out infinite;
-
-    &.line-h-1 {
-      top: 25%;
-      width: 60%;
-      animation-delay: 0s;
-    }
-
-    &.line-h-2 {
-      top: 50%;
-      width: 80%;
-      animation-delay: 0.3s;
-    }
-
-    &.line-h-3 {
-      top: 75%;
-      width: 40%;
-      animation-delay: 0.6s;
-    }
-  }
-
-  // Vertical lines
-  .line-v {
-    position: absolute;
-    width: 1px;
-    background-color: #e0e0e0;
-    top: -100%;
-    animation: lineVertical 2s ease-in-out infinite;
-
-    &.line-v-1 {
-      left: 15%;
-      height: 70%;
-      animation-delay: 0.2s;
-    }
-
-    &.line-v-2 {
-      left: 40%;
-      height: 50%;
-      animation-delay: 0.5s;
-    }
-
-    &.line-v-3 {
-      left: 65%;
-      height: 80%;
-      animation-delay: 0.8s;
-    }
-
-    &.line-v-4 {
-      left: 90%;
-      height: 60%;
-      animation-delay: 1.1s;
-    }
-  }
-
-  .loading-counter {
-    position: absolute;
-    bottom: 40px;
-    right: 50px;
-    font-size:  80px;
-    font-weight: 600;
-    color: var(--dark-color);
-    letter-spacing: 2px;
-
-    @media (max-width: 992px) {
-      bottom: 30px;
-      right: 30px;
-      font-size: 80px;
-    }
+  img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;;
   }
 }
 
@@ -636,33 +557,6 @@ header {
       }
     }
   }
-
-  .swiper-pagination {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding-inline-end: 5%;
-    gap: 0;
-    bottom: 5%;
-    color: var(--light-color);
-    font-size: 24px;
-    font-weight: 500;
-    letter-spacing: 2px;
-
-    .swiper-pagination-current,
-    .swiper-pagination-total {
-      min-width: 30px;
-      text-align: center;
-    }
-
-    .swiper-pagination-line {
-      display: inline-block;
-      width: 60px;
-      height: 2px;
-      background-color: var(--light-color);
-      margin: 0 15px;
-    }
-  }
 }
 
 .story {
@@ -833,6 +727,9 @@ header {
     }
   }
 
+  .service-icon {
+    display: none !important;
+  }
   // Services Grid
   .services-grid {
     display: flex;
@@ -874,6 +771,7 @@ header {
             margin-bottom: 0;
             width: 40px;
             height: 40px;
+            display: none;
           }
         }
       }
@@ -922,6 +820,7 @@ header {
             position: relative;
             bottom: auto;
             left: auto;
+            display: none;
             margin-bottom: 20px;
             width: 50px;
             height: 50px;
@@ -1069,9 +968,8 @@ header {
         margin: 0;
         writing-mode: vertical-rl;
         transform: rotate(180deg);
-        transition: all 0.5s ease-out;
         position: absolute;
-        bottom: 86px; // 30px (icon bottom) + 40px (icon height) + 16px (gap)
+        bottom: 20px; // 30px (icon bottom) + 40px (icon height) + 16px (gap)
         left: 25px;
 
         @include rtl() {
@@ -1190,8 +1088,14 @@ header {
         transition: transform 0.4s ease;
       }
 
-      &:hover img {
-        transform: scale(1.05);
+      &:hover {
+        img {
+          transform: scale(1.05);
+        }
+
+        .data-contain {
+          opacity: 1;
+        }
       }
 
       .data-contain {
@@ -1205,7 +1109,7 @@ header {
         @include centerContainer();
         gap: 10px;
         text-align: center;
-        transition: transform 0.3s ease-out;
+        opacity: 0;
 
         p {
           color: var(--dark-color);
@@ -1219,23 +1123,6 @@ header {
           font-size: 24px;
           font-weight: 700;
           margin: 0px;
-        }
-
-        // Direction states
-        &.from-left {
-          transform: translateX(-100%);
-        }
-        &.from-right {
-          transform: translateX(100%);
-        }
-        &.from-top {
-          transform: translateY(-100%);
-        }
-        &.from-bottom {
-          transform: translateY(100%);
-        }
-        &.visible {
-          transform: translate(0, 0);
         }
       }
     }

@@ -153,24 +153,12 @@ $(document).ready(function () {
 
   var swiper = new Swiper(".swiper-header", {
     loop: true,
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-    },
+    // autoplay: {
+    //   delay: 3000,
+    //   disableOnInteraction: false,
+    // },
     pagination: {
       el: ".swiper-pagination",
-      type: "fraction",
-      formatFractionCurrent: function (number) {
-        return number.toString().padStart(2, '0');
-      },
-      formatFractionTotal: function (number) {
-        return number.toString().padStart(2, '0');
-      },
-      renderFraction: function (currentClass, totalClass) {
-        return '<span class="' + currentClass + '"></span>' +
-               '<span class="swiper-pagination-line"></span>' +
-               '<span class="' + totalClass + '"></span>';
-      }
     },
     navigation: {
       nextEl: ".swiper-button-next",
