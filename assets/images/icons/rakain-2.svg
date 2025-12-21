@@ -1,0 +1,25 @@
+<svg width="186" height="180" viewBox="0 0 186 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.0746988 74.8703L0.186747 149.779L1.00843 152.664C4.70602 165.914 13.7072 175.178 26.4434 178.899C29.2819 179.734 29.5807 179.734 63.606 179.848L97.8554 180L97.7807 162.042L97.6687 144.084L70.7771 143.894L43.8855 143.704L42.0181 142.679C40.1506 141.692 37.9843 139.603 36.9012 137.819C35.5193 135.465 35.4819 134.554 35.4819 84.7037V36.0683H93H150.518V61.8857V87.703H168.259H186V57.4436V27.1462L172.666 13.5921L159.295 0H79.6289H0L0.0746988 74.8703Z" fill="black"/>
+<path style="transform-origin: center; transform-box: fill-box; animation: pulse 2s linear infinite alternate;" d="M150.517 161.924V179.958H168.258H185.999V161.924V143.89H168.258H150.517V161.924Z" fill="black"/>
+<!-- 
+<style>
+
+@keyframes pulse {
+  0% {
+    transform: scale3d(1, 1, 1);
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale3d( .8, .8 , .8);
+    opacity: .5;
+  }
+
+  100% {
+    transform: scale3d(1, 1, 1);
+    opacity: 1;
+  }
+}
+
+</style> -->
+</svg>

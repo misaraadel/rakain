@@ -300,66 +300,14 @@ $(document).ready(function () {
     easing: 'ease-out-cubic'
   });
 
-  // Direction-aware hover effect for project boxes
-  $('.project-box').each(function() {
-    var $box = $(this);
-    var $overlay = $box.find('.data-contain');
-    
-    // Set initial state (hidden from left)
-    $overlay.addClass('from-left');
-
-    $box.on('mouseenter', function(e) {
-      var direction = getDirection(e, this);
-      
-      // Remove all direction classes
-      $overlay.removeClass('from-left from-right from-top from-bottom visible');
-      
-      // Add the entry direction class
-      switch(direction) {
-        case 0: $overlay.addClass('from-top'); break;
-        case 1: $overlay.addClass('from-right'); break;
-        case 2: $overlay.addClass('from-bottom'); break;
-        case 3: $overlay.addClass('from-left'); break;
-      }
-      
-      // Trigger reflow and add visible class
-      $overlay[0].offsetHeight;
-      $overlay.addClass('visible');
-    });
-
-    $box.on('mouseleave', function(e) {
-      var direction = getDirection(e, this);
-      
-      // Remove visible class
-      $overlay.removeClass('visible');
-      
-      // Remove all direction classes and add exit direction
-      $overlay.removeClass('from-left from-right from-top from-bottom');
-      
-      switch(direction) {
-        case 0: $overlay.addClass('from-top'); break;
-        case 1: $overlay.addClass('from-right'); break;
-        case 2: $overlay.addClass('from-bottom'); break;
-        case 3: $overlay.addClass('from-left'); break;
-      }
-    });
+  // Click-to-reveal effect for project boxes
+  // First click: reveal content, Second click: open popup
+  $(document).on('click', function(e) {
+    // If clicking outside project boxes, remove revealed state from all
+    if (!$(e.target).closest('.project-box').length) {
+      $('.project-box').removeClass('revealed');
+    }
   });
-
-  // Function to detect entry/exit direction
-  function getDirection(e, element) {
-    var w = $(element).width();
-    var h = $(element).height();
-    var offset = $(element).offset();
-    
-    // Calculate the x and y coordinates relative to the element
-    var x = (e.pageX - offset.left - (w / 2)) * (w > h ? (h / w) : 1);
-    var y = (e.pageY - offset.top - (h / 2)) * (h > w ? (w / h) : 1);
-    
-    // Determine the direction based on the angle
-    var direction = Math.round((((Math.atan2(y, x) * (180 / Math.PI)) + 180) / 90) + 3) % 4;
-    
-    return direction;
-  }
 
   // Project Popup Gallery
   var projectPopup = {
@@ -384,11 +332,21 @@ $(document).ready(function () {
         });
       });
       
-      // Open popup on project click
+      // Click behavior: first click reveals, second click opens popup
       $('.project-box').on('click', function(e) {
         e.preventDefault();
-        var index = $('.project-box').index(this);
-        self.open(index);
+        e.stopPropagation();
+        var $box = $(this);
+        
+        if ($box.hasClass('revealed')) {
+          // Second click - open popup
+          var index = $('.project-box').index(this);
+          self.open(index);
+        } else {
+          // First click - reveal content
+          $('.project-box').removeClass('revealed'); // Remove from others
+          $box.addClass('revealed');
+        }
       });
       
       // Close popup
